@@ -1,2 +1,11 @@
 # byalamir.github.io
-Landing page for the personal site and portfolio for Alamir Jihad St.Michael
+
+Personal site and portfolio for Alamir Jihad St.Michael.
+
+## Structure
+- Writing
+- LVRS
+- Projects
+- About
+
+Built as a lightweight static site for GitHub Pages.
