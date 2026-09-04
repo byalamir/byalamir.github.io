@@ -18,12 +18,26 @@
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header wrap">
     <a class="brand" href="#top" aria-label="BY ALAMIR home">BY ALAMIR</a>
-    <nav aria-label="Primary navigation">
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#writing">Writing</a>
       <a href="#lvrs">LVRS</a>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
     </nav>
+
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation menu">
+        <span>Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </summary>
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="#writing">Writing</a>
+        <a href="#lvrs">LVRS</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </nav>
+    </details>
   </header>
 
   <main id="content">
@@ -168,5 +182,13 @@
     <div><div class="footer-brand">BY ALAMIR</div><p>WRITING · RESEARCH · MUSIC · DESIGN</p></div>
     <div class="footer-links"><a href="https://github.com/byalamir">GitHub ↗</a><a href="#top">Back to top ↑</a></div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        link.closest('details')?.removeAttribute('open');
+      });
+    });
+  </script>
 </body>
 </html>
