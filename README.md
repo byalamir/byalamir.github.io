@@ -19,7 +19,8 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Dark green / black editorial archive
 - Formal minimalism
 - Large typography
-- Geometric monochrome hero artwork
+- Multidisciplinary hero artwork connecting music, fashion, and research
+- CSS-generated geometric hero retained as a fallback
 - Black-bar / redaction motif
 - Bone / cream contrast sections
 - Responsive desktop and mobile layouts
@@ -52,9 +53,27 @@ Working rule:
 
 The main hero line — **“Ideas, culture, and the systems underneath them.”** — functions as the editorial thesis. The mission statement — **“NO ALGORITHM OWNS YOUR CREATIVITY.”** — is the primary philosophical statement.
 
+## Hero artwork system
+
+The hero is being developed as a visual summary of the broader BY ALAMIR ecosystem rather than a generic abstract image.
+
+It should represent three core areas simultaneously:
+
+- **LVRS Radio** — audio, music discovery, criticism, editorial culture
+- **ELFA Fashion** — fashion, textiles, design language, visual identity
+- **Psychology / Research** — papers, frameworks, diagrams, systems thinking
+
+The homepage is currently wired for the production asset at:
+
+`/assets/byalamir-hero-ecosystem.png`
+
+Until that file is added, the original CSS-generated geometric artwork remains visible as a graceful fallback. The production image is set to fill the hero frame responsively on desktop and mobile with a restrained contrast and brightness adjustment to integrate it with the site's palette.
+
+Additional asset notes live in `assets/README.md`.
+
 ## Branding and site icons
 
-The site icon system is based on the same geometric language as the hero artwork.
+The site icon system is based on the same geometric language as the original hero artwork.
 
 Current icon files:
 - `favicon.svg`
@@ -125,6 +144,19 @@ Commit:
 
 Commit:
 - `65908f8` — Refine homepage copy for a restrained editorial tone
+
+### 2026-09-04 — Multidisciplinary hero artwork preparation
+- Defined the next hero artwork around the three major creative pillars: LVRS Radio, ELFA Fashion, and psychology / research work.
+- Wired the homepage to load `/assets/byalamir-hero-ecosystem.png` once the final image is added.
+- Preserved the existing CSS-generated geometric artwork as an automatic fallback so the live site remains intact before or during asset replacement.
+- Added responsive image behavior for desktop and mobile.
+- Added a subtle image treatment to keep the production artwork consistent with the site's dark green editorial palette.
+- Created `assets/README.md` to document the image path, purpose, and future responsive-asset conventions.
+
+Commits:
+- `49fcfd7` — Prepare hero artwork asset integration
+- `15ecc5f` — Style responsive hero image with fallback
+- `bdb8d3b` — Document hero artwork asset path
 
 ## Maintenance convention
 
