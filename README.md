@@ -260,6 +260,14 @@ Commits:
 - `c306fda` — Add complete mobile navigation dropdown
 - `22c00e5` — Style mobile menu dropdown
 
+### 2026-09-04 — Navigation cache hardening
+- Corrected a temporary state where the desktop navigation and the raw mobile dropdown could appear at the same time while an older cached stylesheet was still being used.
+- Added a cache-busted stylesheet reference so the navigation markup and responsive CSS update together more reliably after deployment.
+- Preserved the intended rule: full horizontal navigation on desktop; `MENU +` dropdown only on mobile.
+
+Commit:
+- `4f27de3` — Cache-bust stylesheet for mobile navigation fix
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
