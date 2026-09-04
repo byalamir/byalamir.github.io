@@ -2,10 +2,14 @@
 
 Personal site and portfolio for Alamir Jihad St.Michael.
 
-## Structure
+## V2 direction
+
+Dark green cinematic archive / formal minimalism / black-bar redaction motif.
+
+Sections:
 - Writing
 - LVRS
 - Projects
 - About
 
-Built as a lightweight static site for GitHub Pages.
+Built as a static GitHub Pages site with plain HTML and CSS.
