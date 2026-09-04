@@ -35,10 +35,7 @@ Selected essays, frameworks, criticism, and research across psychology, sociolog
 Music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
 
 ### Projects
-Ongoing work across:
-- LVRS Radio
-- Research & Essays
-- Creative Development
+Ongoing work across music, research, fashion, design, and creative development, including LVRS Radio and ELFA Fashion.
 
 ### About
 A concise explanation of BY ALAMIR as a personal archive spanning multiple disciplines.
@@ -53,6 +50,83 @@ Working rule:
 
 The main hero line — **“Ideas, culture, and the systems underneath them.”** — functions as the editorial thesis. The mission statement — **“NO ALGORITHM OWNS YOUR CREATIVITY.”** — is the primary philosophical statement.
 
+## Repository organization
+
+The repository is organized so source material, public site code, reusable assets, machine-readable metadata, documentation, and historical files are easy to distinguish and search.
+
+```text
+/
+├── index.html
+├── README.md
+├── assets/
+│   ├── css/
+│   │   └── site.css
+│   ├── icons/
+│   └── images/
+│       └── hero/
+├── content/
+│   ├── writing/
+│   ├── research/
+│   ├── lvrs/
+│   ├── elfa/
+│   └── projects/
+├── data/
+│   └── content-index.json
+├── docs/
+│   └── ARCHITECTURE.md
+└── archive/
+    └── legacy/
+```
+
+### Root
+
+The root stays intentionally small. `index.html` is the public entry point and this README is the human-readable project archive.
+
+### Assets
+
+Reusable front-end files live under `assets/`:
+
+- `assets/css/site.css` — active site stylesheet
+- `assets/icons/` — favicon and platform icon files
+- `assets/images/` — artwork and visual assets
+
+### Content collections
+
+Source material is organized by discipline:
+
+- `content/writing/` — essays, criticism, commentary, and general long-form writing
+- `content/research/` — psychology, sociology, frameworks, papers, and research-led work
+- `content/lvrs/` — LVRS Radio editorials, playlists, reviews, discovery, and release coverage
+- `content/elfa/` — ELFA garment concepts, collections, materials, identity, and product development
+- `content/projects/` — multidisciplinary work and projects that cross collections
+
+Use one stable lowercase kebab-case slug per substantial item. `content/_template.md` provides the standard metadata fields and note structure for future entries.
+
+### Machine-readable content index
+
+`data/content-index.json` is the discovery layer for the website.
+
+Anything that should eventually appear in site search, filters, collection pages, archives, or feeds should be registered there with metadata such as:
+
+- title
+- collection
+- content type
+- status
+- year/date
+- summary
+- tags
+- public URL
+
+Full source text remains in `content/`; the JSON file stays lightweight and searchable. This gives us a stable architecture for adding site-wide search later without reorganizing the repository again.
+
+### Documentation
+
+Technical conventions and architecture decisions live under `docs/`. The full repository map and workflow are documented in `docs/ARCHITECTURE.md`.
+
+### Archive
+
+Superseded loose files are moved to `archive/legacy/` instead of being deleted or left at root. Git history remains the canonical version history; the archive simply keeps recognizable old snapshots easy to inspect.
+
 ## Hero artwork system
 
 The hero is being developed as a visual summary of the broader BY ALAMIR ecosystem rather than a generic abstract image.
@@ -65,21 +139,22 @@ It should represent three core areas simultaneously:
 
 The homepage is currently wired for the production asset at:
 
-`/assets/byalamir-hero-ecosystem.png`
+`/assets/images/hero/byalamir-hero-ecosystem.png`
 
 Until that file is added, the original CSS-generated geometric artwork remains visible as a graceful fallback. The production image is set to fill the hero frame responsively on desktop and mobile with a restrained contrast and brightness adjustment to integrate it with the site's palette.
 
-Additional asset notes live in `assets/README.md`.
+Additional asset notes live in `assets/README.md` and `assets/images/hero/README.md`.
 
 ## Branding and site icons
 
 The site icon system is based on the same geometric language as the original hero artwork.
 
 Current icon files:
-- `favicon.svg`
-- `favicon.png`
-- `favicon.ico`
-- `apple-touch-icon.png`
+
+- `assets/icons/favicon.svg`
+- `assets/icons/favicon.png`
+- `assets/icons/favicon.ico`
+- `assets/icons/apple-touch-icon.png`
 
 The HTML includes cache-busted references and multiple browser fallbacks to improve favicon reliability across desktop, mobile, and pinned/home-screen contexts.
 
@@ -147,32 +222,52 @@ Commit:
 
 ### 2026-09-04 — Multidisciplinary hero artwork preparation
 - Defined the next hero artwork around the three major creative pillars: LVRS Radio, ELFA Fashion, and psychology / research work.
-- Wired the homepage to load `/assets/byalamir-hero-ecosystem.png` once the final image is added.
+- Wired the homepage to load the production hero once its image file is added.
 - Preserved the existing CSS-generated geometric artwork as an automatic fallback so the live site remains intact before or during asset replacement.
 - Added responsive image behavior for desktop and mobile.
 - Added a subtle image treatment to keep the production artwork consistent with the site's dark green editorial palette.
-- Created `assets/README.md` to document the image path, purpose, and future responsive-asset conventions.
+- Created asset documentation for the hero artwork.
 
 Commits:
 - `49fcfd7` — Prepare hero artwork asset integration
 - `15ecc5f` — Style responsive hero image with fallback
 - `bdb8d3b` — Document hero artwork asset path
+- `c2e6842` — Archive multidisciplinary hero setup in README
+
+### 2026-09-04 — Repository architecture and searchable content registry
+- Reduced the repository root to the public entry point, documentation, and organized top-level directories.
+- Moved the active stylesheet to `assets/css/site.css`.
+- Moved active browser icons to `assets/icons/` and updated the homepage references.
+- Established dedicated source collections for Writing, Research, LVRS, ELFA, and multidisciplinary Projects.
+- Added `content/_template.md` as the standard starting point for future source entries.
+- Added `data/content-index.json` as a machine-readable registry for future site search, filtering, archive pages, and feeds.
+- Added `docs/ARCHITECTURE.md` to document naming, placement, and update conventions.
+- Moved old loose homepage/icon files into `archive/legacy/` instead of deleting them.
+- Updated the hero production path to `assets/images/hero/byalamir-hero-ecosystem.png`.
+
+Commit:
+- `1caa07b` — Reorganize repository around content collections and searchable index
 
 ## Maintenance convention
 
 This README is also the development archive for the project.
 
 For every meaningful site update:
-1. Update the site files.
-2. Commit the change with a clear message.
-3. Add a dated entry here explaining what changed and why.
+1. Put source material in the appropriate `content/` collection.
+2. Put reusable code and artwork in the appropriate `assets/` folder.
+3. Register anything intended for site discovery in `data/content-index.json`.
+4. Update the live site files.
+5. Commit the change with a clear message.
+6. Add a dated entry here explaining what changed and why.
 
-This keeps both the Git history and a human-readable record of the site's evolution.
+This keeps the Git history, source archive, site discovery layer, and human-readable development record aligned.
 
 ## Technical notes
 
 - Hosting: GitHub Pages
 - Repository: `byalamir/byalamir.github.io`
 - Front end: HTML + CSS
+- Active stylesheet: `assets/css/site.css`
+- Content registry: `data/content-index.json`
 - No framework or build system required
 - Main branch deploys directly to the public site
