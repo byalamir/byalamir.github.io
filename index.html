@@ -12,7 +12,7 @@
   <link rel="icon" href="/assets/icons/favicon.png?v=4" type="image/png" sizes="64x64">
   <link rel="shortcut icon" href="/assets/icons/favicon.ico?v=4">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=4" sizes="180x180">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css?v=5">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -184,9 +184,10 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.mobile-menu a').forEach((link) => {
-      link.addEventListener('click', () => {
-        link.closest('details')?.removeAttribute('open');
+    document.querySelectorAll('.mobile-menu a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var menu = link.closest('.mobile-nav');
+        if (menu) menu.removeAttribute('open');
       });
     });
   </script>
