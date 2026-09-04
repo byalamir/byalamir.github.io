@@ -1,31 +1,27 @@
-# BY ALAMIR Assets
+# Assets
 
-## Hero ecosystem artwork
+Reusable site assets live here. Keep the repository root reserved for the public entry point and project documentation.
 
-Expected production file:
+## Structure
 
-`byalamir-hero-ecosystem.png`
+- `css/` — site stylesheets
+- `icons/` — favicon and platform icon files
+- `images/` — artwork and section imagery
 
-The homepage is already wired to load:
+## Hero artwork
 
-`/assets/byalamir-hero-ecosystem.png`
+Production hero path:
 
-Until that file exists, the original CSS-generated geometric hero remains visible as a fallback.
+`/assets/images/hero/byalamir-hero-ecosystem.png`
 
-### Artwork role
+The homepage is already wired to this location. Until the image exists, the CSS-generated geometric artwork remains visible as a fallback.
 
-The hero artwork represents the wider BY ALAMIR ecosystem rather than a single discipline:
+## Image naming
 
-- **LVRS Radio** — music, audio, discovery, editorial work
-- **ELFA Fashion** — fashion, textile, design, visual identity
-- **Psychology / Research** — papers, frameworks, diagrams, systems thinking
+Use lowercase kebab-case filenames that describe both subject and use, for example:
 
-### Current display behavior
+- `lvrs-release-roundup-2026-09-04.jpg`
+- `elfa-floral-collar-polo-concept-01.png`
+- `research-recursive-reality-enclosure-hero.jpg`
 
-- Desktop and mobile responsive
-- Artwork fills the hero frame with `object-fit: cover`
-- Centered crop by default
-- Slight contrast / brightness treatment is applied in CSS to integrate the artwork with the site palette
-- Existing geometric artwork remains the fallback if the image cannot load
-
-If a separate mobile crop is introduced later, document it here and update the homepage to use a `<picture>` element or responsive image source set.
+Avoid generic names such as `image1.png`, `final.png`, or `new-photo.jpg`.

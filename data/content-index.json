@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "items": [
+    {
+      "id": "recursive-reality-enclosure",
+      "title": "Recursive Reality Enclosure",
+      "collection": "research",
+      "type": "paper",
+      "status": "selected",
+      "year": 2026,
+      "summary": "A framework for how fragmented information environments can produce self-reinforcing interpretations of reality.",
+      "tags": ["psychology", "sociology", "media", "information environments", "reality distortion"],
+      "url": "/#writing"
+    },
+    {
+      "id": "the-exception-problem",
+      "title": "The Exception Problem",
+      "collection": "writing",
+      "type": "essay",
+      "status": "selected",
+      "year": 2026,
+      "summary": "An analysis of how people recognize patterns in modern relationships while treating their own circumstances as exceptions.",
+      "tags": ["relationships", "culture", "psychology", "dating"],
+      "url": "/#writing"
+    },
+    {
+      "id": "morality-punishment-control",
+      "title": "Morality, Punishment & Control",
+      "collection": "research",
+      "type": "essay",
+      "status": "selected",
+      "year": 2026,
+      "summary": "An examination of how moral language can function as punishment, status signaling, and a response to low perceived agency.",
+      "tags": ["psychology", "culture", "morality", "punishment", "agency"],
+      "url": "/#writing"
+    },
+    {
+      "id": "lvrs-radio",
+      "title": "LVRS Radio",
+      "collection": "lvrs",
+      "type": "project",
+      "status": "active",
+      "year": 2026,
+      "summary": "Music discovery, playlists, reviews, release coverage, and editorial work.",
+      "tags": ["music", "editorial", "discovery", "playlists", "reviews"],
+      "url": "/#lvrs"
+    },
+    {
+      "id": "elfa-fashion",
+      "title": "ELFA Fashion",
+      "collection": "elfa",
+      "type": "project",
+      "status": "in-development",
+      "year": 2026,
+      "summary": "Fashion concepts, garment development, visual identity, and product design.",
+      "tags": ["fashion", "design", "garments", "identity", "ELFA"],
+      "url": "/#projects"
+    }
+  ]
+}
