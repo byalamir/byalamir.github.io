@@ -24,6 +24,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Black-bar / redaction motif
 - Bone / cream contrast sections
 - Responsive desktop and mobile layouts
+- Compact mobile menu exposing the complete site navigation
 - Plain HTML and CSS, deployed through GitHub Pages
 
 ## Site structure
@@ -248,6 +249,17 @@ Commits:
 Commit:
 - `1caa07b` — Reorganize repository around content collections and searchable index
 
+### 2026-09-04 — Complete mobile navigation
+- Replaced the truncated mobile navigation, which only exposed Writing and LVRS, with a compact `MENU +` control.
+- Added a dropdown containing Writing, LVRS, Projects, and About so every primary section is accessible on small screens.
+- Kept the full horizontal navigation unchanged on desktop.
+- Added automatic menu closing after a mobile navigation selection.
+- Styled the dropdown to match the dark editorial visual system rather than introducing a separate mobile aesthetic.
+
+Commits:
+- `c306fda` — Add complete mobile navigation dropdown
+- `22c00e5` — Style mobile menu dropdown
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
@@ -266,7 +278,7 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 
 - Hosting: GitHub Pages
 - Repository: `byalamir/byalamir.github.io`
-- Front end: HTML + CSS
+- Front end: HTML + CSS with a minimal inline script for mobile menu closing
 - Active stylesheet: `assets/css/site.css`
 - Content registry: `data/content-index.json`
 - No framework or build system required
