@@ -26,6 +26,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Responsive desktop and mobile layouts
 - Compact mobile menu exposing the complete site navigation
 - Dedicated horizontal Writing archive page with external publication destinations
+- Hero artwork used as the mobile home-screen app identity on iOS and Android
 - Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
 - Plain HTML and CSS, deployed through GitHub Pages
 
@@ -66,6 +67,7 @@ The repository is organized so source material, public site code, reusable asset
 ├── index.html
 ├── writing/
 │   └── index.html
+├── site.webmanifest
 ├── README.md
 ├── assets/
 │   ├── css/
@@ -89,15 +91,16 @@ The repository is organized so source material, public site code, reusable asset
 
 ### Root
 
-The root stays intentionally small. `index.html` is the public entry point, `writing/index.html` is the dedicated public writing archive, and this README is the human-readable project archive.
+The root stays intentionally small. `index.html` is the public entry point, `writing/index.html` is the dedicated public writing archive, `site.webmanifest` defines the mobile web-app identity, and this README is the human-readable project archive.
 
 ### Assets
 
 Reusable front-end files live under `assets/`:
 
 - `assets/css/site.css` — active site stylesheet shared by the homepage and writing archive
-- `assets/icons/` — favicon and platform icon files
+- `assets/icons/` — browser favicon and platform icon files
 - `assets/images/` — artwork and visual assets
+- `assets/images/hero/byalamir-hero-ecosystem.png` — production hero artwork and mobile home-screen app icon source
 
 ### Content collections
 
@@ -147,26 +150,38 @@ It should represent three core areas simultaneously:
 - **ELFA Fashion** — fashion, textiles, design language, visual identity
 - **Psychology / Research** — papers, frameworks, diagrams, systems thinking
 
-The homepage is currently wired for the production asset at:
+The homepage production asset lives at:
 
 `/assets/images/hero/byalamir-hero-ecosystem.png`
 
-Until that file is added, the original CSS-generated geometric artwork remains visible as a graceful fallback. The production image is set to fill the hero frame responsively on desktop and mobile with a restrained contrast and brightness adjustment to integrate it with the site's palette.
+The original CSS-generated geometric artwork remains available as an automatic fallback if the production image cannot load. The production image fills the hero frame responsively on desktop and mobile with a restrained contrast and brightness adjustment to integrate it with the site's palette.
+
+The same hero artwork now also serves as the visual identity when BY ALAMIR is saved to a phone home screen.
 
 Additional asset notes live in `assets/README.md` and `assets/images/hero/README.md`.
 
 ## Branding and site icons
 
-The site icon system is based on the same geometric language as the original hero artwork.
+Browser and home-screen identity intentionally use two related but different treatments.
 
-Current icon files:
+### Browser favicon
+
+The regular browser favicon system retains the compact geometric mark so tabs and bookmark surfaces remain legible at very small sizes.
+
+Current browser icon files:
 
 - `assets/icons/favicon.svg`
 - `assets/icons/favicon.png`
 - `assets/icons/favicon.ico`
-- `assets/icons/apple-touch-icon.png`
 
-The HTML includes cache-busted references and multiple browser fallbacks to improve favicon reliability across desktop, mobile, and pinned/home-screen contexts.
+### Mobile home-screen icon
+
+When the site is saved to a phone home screen, the visual identity uses the full multidisciplinary hero artwork instead of the small geometric favicon.
+
+- **iOS / iPadOS:** `apple-touch-icon` points directly to `/assets/images/hero/byalamir-hero-ecosystem.png`.
+- **Android:** `site.webmanifest` identifies the same hero artwork as the web-app icon and launches the site in standalone display mode when supported.
+- Both the homepage and Writing archive include the same mobile-app metadata so the saved identity remains consistent regardless of which page a visitor is viewing.
+- The saved app title is **BY ALAMIR** and uses the site's dark green theme/background color.
 
 ## Archive Footfall
 
@@ -363,6 +378,21 @@ Commits:
 - `ad17ec9` — Connect homepage writing navigation to archive page
 - `1cea8ab` — Register writing archive and publication link fields
 
+### 2026-09-04 — Mobile home-screen app identity
+- Kept the existing geometric favicon system for browser tabs and bookmarks.
+- Changed the iOS / iPadOS `apple-touch-icon` to use the multidisciplinary hero artwork.
+- Added `site.webmanifest` so Android and other supporting browsers recognize BY ALAMIR as a standalone web-app identity.
+- Set the Android manifest icon to the same production hero artwork used on the homepage.
+- Added the app title **BY ALAMIR**, standalone display preference, and the site's dark green theme/background colors.
+- Applied the same mobile-app metadata to both the homepage and `/writing/` so saving either page produces the same site identity.
+- Removed intermediate SVG icon wrappers after switching the final implementation to reference the hero image directly.
+
+Commits:
+- `880a92b` — Add mobile web app manifest
+- `f875366` — Use hero artwork for mobile home-screen app identity
+- `2c4bece` — Apply mobile app identity to writing archive
+- `b26afe` — Use hero artwork directly for Android home-screen icon
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
@@ -384,6 +414,8 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 - Front end: HTML + CSS with minimal browser JavaScript for mobile navigation and Archive Footfall
 - Active stylesheet: `assets/css/site.css`
 - Writing archive: `writing/index.html`
+- Mobile web-app manifest: `site.webmanifest`
+- Home-screen artwork source: `assets/images/hero/byalamir-hero-ecosystem.png`
 - Content registry: `data/content-index.json`
 - Public visit-counter service: CounterAPI.com
 - No framework or build system required
