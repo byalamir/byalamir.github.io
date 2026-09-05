@@ -35,6 +35,8 @@ Selected essays, frameworks, criticism, and research across psychology, sociolog
 ### LVRS
 Music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
 
+The homepage keeps LVRS lightweight rather than creating a separate page for the current playlist-first setup. Daily activity points visitors to X, while the Apple Music playlist will be linked directly from the LVRS section.
+
 ### Projects
 Ongoing work across music, research, fashion, design, and creative development, including LVRS Radio and ELFA Fashion.
 
@@ -267,6 +269,16 @@ Commits:
 
 Commit:
 - `4f27de3` — Cache-bust stylesheet for mobile navigation fix
+
+### 2026-09-04 — LVRS playlist-first homepage refinement
+- Changed **“Daily posts live on social platforms.”** to **“Daily posts live on X.”**
+- Removed **“Selected work is collected here.”** so the LVRS section no longer implies a separate archive page is required.
+- Reserved the next line for a direct **“Listen on Apple Music ↗”** link once the exact playlist URL is supplied.
+- Added restrained link styling that matches the existing editorial design instead of introducing a large promotional button.
+
+Commits:
+- `ee09399` — Refine LVRS copy and prepare Apple Music link slot
+- `ae1c338` — Prepare understated Apple Music link styling
 
 ## Maintenance convention
 
