@@ -11,7 +11,9 @@
       "year": 2026,
       "summary": "A framework for how fragmented information environments can produce self-reinforcing interpretations of reality.",
       "tags": ["psychology", "sociology", "media", "information environments", "reality distortion"],
-      "url": "/#writing"
+      "url": "/writing/",
+      "x_url": null,
+      "substack_url": null
     },
     {
       "id": "the-exception-problem",
@@ -22,7 +24,9 @@
       "year": 2026,
       "summary": "An analysis of how people recognize patterns in modern relationships while treating their own circumstances as exceptions.",
       "tags": ["relationships", "culture", "psychology", "dating"],
-      "url": "/#writing"
+      "url": "/writing/",
+      "x_url": null,
+      "substack_url": null
     },
     {
       "id": "morality-punishment-control",
@@ -33,7 +37,9 @@
       "year": 2026,
       "summary": "An examination of how moral language can function as punishment, status signaling, and a response to low perceived agency.",
       "tags": ["psychology", "culture", "morality", "punishment", "agency"],
-      "url": "/#writing"
+      "url": "/writing/",
+      "x_url": null,
+      "substack_url": null
     },
     {
       "id": "lvrs-radio",
