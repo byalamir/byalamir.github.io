@@ -3,6 +3,19 @@
   "updated": "2026-09-04",
   "items": [
     {
+      "id": "lindsay-clancy-mistrial",
+      "title": "Don’t Let Emotion Get Ahead of the Law",
+      "collection": "writing",
+      "type": "essay",
+      "status": "selected",
+      "year": 2026,
+      "summary": "A legal and psychological analysis of why the Lindsay Clancy mistrial makes procedural sense despite the emotional weight of the case.",
+      "tags": ["law", "psychology", "Lindsay Clancy", "mistrial", "legal process"],
+      "url": "/writing/",
+      "x_url": null,
+      "substack_url": null
+    },
+    {
       "id": "recursive-reality-enclosure",
       "title": "Recursive Reality Enclosure",
       "collection": "research",
@@ -16,15 +29,28 @@
       "substack_url": null
     },
     {
-      "id": "the-exception-problem",
-      "title": "The Exception Problem",
+      "id": "relationship-problem",
+      "title": "The “Relationship” Problem",
       "collection": "writing",
       "type": "essay",
       "status": "selected",
       "year": 2026,
+      "summary": "An analysis of relationship ambiguity, modern dating labels, and the gendered expectations that shape how people define romantic connections.",
+      "tags": ["relationships", "culture", "dating", "gender", "ambiguity"],
+      "url": "/writing/",
+      "x_url": null,
+      "substack_url": null
+    },
+    {
+      "id": "the-exception-problem",
+      "title": "The Exception Problem",
+      "collection": "writing",
+      "type": "essay",
+      "status": "unpublished",
+      "year": 2026,
       "summary": "An analysis of how people recognize patterns in modern relationships while treating their own circumstances as exceptions.",
       "tags": ["relationships", "culture", "psychology", "dating"],
-      "url": "/writing/",
+      "url": null,
       "x_url": null,
       "substack_url": null
     },
@@ -33,11 +59,11 @@
       "title": "Morality, Punishment & Control",
       "collection": "research",
       "type": "essay",
-      "status": "selected",
+      "status": "unpublished",
       "year": 2026,
       "summary": "An examination of how moral language can function as punishment, status signaling, and a response to low perceived agency.",
       "tags": ["psychology", "culture", "morality", "punishment", "agency"],
-      "url": "/writing/",
+      "url": null,
       "x_url": null,
       "substack_url": null
     },
