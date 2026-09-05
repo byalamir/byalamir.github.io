@@ -37,6 +37,8 @@ Selected essays, frameworks, criticism, and research across psychology, sociolog
 
 The homepage keeps three selected pieces as a visual preview. The full archive lives at `/writing/`, where each piece is presented as a horizontally stacked editorial card with its category/type header, title, synopsis, and publication destinations for **Read on X** and **Read on Substack**.
 
+The public Writing archive is publication-led: a piece appears there once it has been published on both X and Substack. As of the initial published baseline, the archive contains **Don’t Let Emotion Get Ahead of the Law**, **Recursive Reality Enclosure**, and **The “Relationship” Problem**. Other completed or developing pieces can remain in the internal content registry without appearing publicly until their publication destinations are ready.
+
 ### LVRS
 R&B music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
 
@@ -366,7 +368,7 @@ Commits:
 - Created `/writing/` as a separate, intentionally simple archive page rather than turning every article into a locally hosted site page.
 - Reinterpreted the homepage essay-card visual language as full-width horizontal rows.
 - Each row contains the category/type header, archive number, title, short synopsis, and vertically stacked **Read on X** / **Read on Substack** destinations.
-- Seeded the page with Recursive Reality Enclosure, The Exception Problem, and Morality, Punishment & Control.
+- Initially seeded the page with placeholder selected work while publication links were being established.
 - Kept publication destinations visibly inactive until exact article URLs are supplied rather than inserting guessed or generic links.
 - Updated the homepage Writing navigation, hero action, and selected-writing footer link to point to the new archive.
 - Added `x_url` and `substack_url` fields to the writing entries in `data/content-index.json` for direct platform destinations as the archive grows.
@@ -392,6 +394,19 @@ Commits:
 - `f875366` — Use hero artwork for mobile home-screen app identity
 - `2c4bece` — Apply mobile app identity to writing archive
 - `b26afe` — Use hero artwork directly for Android home-screen icon
+
+### 2026-09-04 — Dual-published Writing baseline
+- Reset the public Writing selection to the pieces currently confirmed as published on both X and Substack.
+- Established the initial public set as **Don’t Let Emotion Get Ahead of the Law**, **Recursive Reality Enclosure**, and **The “Relationship” Problem**.
+- Updated both the homepage preview and `/writing/` archive to show the same three-piece published baseline.
+- Kept **The Exception Problem** and **Morality, Punishment & Control** in `data/content-index.json` as unpublished rather than deleting them.
+- Formalized the rule that public Writing cards represent published work, while unpublished or developing work can remain preserved in the internal content registry.
+- Left X and Substack destinations inactive until the exact six article URLs are supplied.
+
+Commits:
+- `7702011` — Align homepage writing preview with published archive
+- `2156f75` — Seed writing archive with dual-published pieces
+- `8cee333` — Register initial dual-published writing set
 
 ## Maintenance convention
 
