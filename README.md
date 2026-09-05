@@ -25,7 +25,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Bone / cream contrast sections
 - Responsive desktop and mobile layouts
 - Compact mobile menu exposing the complete site navigation
-- Dedicated horizontal Writing archive page with external publication destinations
+- Dedicated horizontal Writing archive page with platform-specific publication destinations
 - Hero artwork used as the mobile home-screen app identity on iOS and Android
 - Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
 - Plain HTML and CSS, deployed through GitHub Pages
@@ -35,9 +35,15 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 ### Writing
 Selected essays, frameworks, criticism, and research across psychology, sociology, culture, media, politics, and relationships.
 
-The homepage keeps three selected pieces as a visual preview. The full archive lives at `/writing/`, where each piece is presented as a horizontally stacked editorial card with its category/type header, title, synopsis, and publication destinations for **Read on X** and **Read on Substack**.
+The homepage keeps three selected pieces as a visual preview. The full archive lives at `/writing/`, where each piece is presented as a horizontally stacked editorial card with its category/type header, title, synopsis, and only the publication destinations that actually exist for that piece.
 
-The public Writing archive is publication-led: a piece appears there once it has been published on both X and Substack. As of the initial published baseline, the archive contains **Don’t Let Emotion Get Ahead of the Law**, **Recursive Reality Enclosure**, and **The “Relationship” Problem**. Other completed or developing pieces can remain in the internal content registry without appearing publicly until their publication destinations are ready.
+The public Writing archive is publication-led rather than platform-gated. A piece can appear once it has a public destination, and each card renders only the platforms where that piece is available. The current baseline is:
+
+- **Don’t Let Emotion Get Ahead of the Law** — X + Substack
+- **Recursive Reality Enclosure** — X + Substack
+- **The “Relationship” Problem** — Substack only
+
+Other completed or developing pieces can remain in the internal content registry without appearing publicly until their publication destinations are ready.
 
 ### LVRS
 R&B music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
@@ -73,7 +79,8 @@ The repository is organized so source material, public site code, reusable asset
 ├── README.md
 ├── assets/
 │   ├── css/
-│   │   └── site.css
+│   │   ├── site.css
+│   │   └── ticker.css
 │   ├── icons/
 │   └── images/
 │       └── hero/
@@ -99,7 +106,8 @@ The root stays intentionally small. `index.html` is the public entry point, `wri
 
 Reusable front-end files live under `assets/`:
 
-- `assets/css/site.css` — active site stylesheet shared by the homepage and writing archive
+- `assets/css/site.css` — active shared site stylesheet
+- `assets/css/ticker.css` — responsive homepage topic ticker behavior
 - `assets/icons/` — browser favicon and platform icon files
 - `assets/images/` — artwork and visual assets
 - `assets/images/hero/byalamir-hero-ecosystem.png` — production hero artwork and mobile home-screen app icon source
@@ -131,6 +139,8 @@ Anything that should eventually appear in site search, filters, collection pages
 - tags
 - public URL
 - platform-specific destinations such as `x_url`, `substack_url`, or `apple_music_url`
+
+A platform destination can remain `null` when a piece is not published there. The public archive should not render a link for an unavailable destination.
 
 Full source text remains in `content/`; the JSON file stays lightweight and searchable. This gives us a stable architecture for adding site-wide search later without reorganizing the repository again.
 
@@ -367,9 +377,9 @@ Commits:
 ### 2026-09-04 — Dedicated Writing archive
 - Created `/writing/` as a separate, intentionally simple archive page rather than turning every article into a locally hosted site page.
 - Reinterpreted the homepage essay-card visual language as full-width horizontal rows.
-- Each row contains the category/type header, archive number, title, short synopsis, and vertically stacked **Read on X** / **Read on Substack** destinations.
+- Each row contains the category/type header, archive number, title, short synopsis, and available external publication destinations.
 - Initially seeded the page with placeholder selected work while publication links were being established.
-- Kept publication destinations visibly inactive until exact article URLs are supplied rather than inserting guessed or generic links.
+- Kept unknown publication destinations visibly inactive rather than inserting guessed or generic links.
 - Updated the homepage Writing navigation, hero action, and selected-writing footer link to point to the new archive.
 - Added `x_url` and `substack_url` fields to the writing entries in `data/content-index.json` for direct platform destinations as the archive grows.
 - Added responsive behavior so the horizontal rows collapse cleanly into vertical cards on small screens.
@@ -395,18 +405,38 @@ Commits:
 - `2c4bece` — Apply mobile app identity to writing archive
 - `b26afe` — Use hero artwork directly for Android home-screen icon
 
-### 2026-09-04 — Dual-published Writing baseline
-- Reset the public Writing selection to the pieces currently confirmed as published on both X and Substack.
+### 2026-09-04 — Mobile topic ticker
+- Reworked the homepage topic strip on mobile so long discipline labels no longer get permanently clipped at the viewport edge.
+- Added a duplicated ticker track for a continuous horizontal loop through Psychology, Sociology, Culture, Music, Media, Design, and Storytelling.
+- Kept desktop presentation restrained while allowing the mobile strip to move continuously.
+- Added a reduced-motion fallback for visitors who disable animation.
+
+Commits:
+- `45c04b9` — Add responsive topic ticker styling
+- `99a5a01` — Make mobile topic strip scroll cleanly
+
+### 2026-09-04 — Published Writing baseline
+- Reset the public Writing selection to the pieces currently confirmed as published externally.
 - Established the initial public set as **Don’t Let Emotion Get Ahead of the Law**, **Recursive Reality Enclosure**, and **The “Relationship” Problem**.
 - Updated both the homepage preview and `/writing/` archive to show the same three-piece published baseline.
 - Kept **The Exception Problem** and **Morality, Punishment & Control** in `data/content-index.json` as unpublished rather than deleting them.
 - Formalized the rule that public Writing cards represent published work, while unpublished or developing work can remain preserved in the internal content registry.
-- Left X and Substack destinations inactive until the exact six article URLs are supplied.
 
 Commits:
 - `7702011` — Align homepage writing preview with published archive
-- `2156f75` — Seed writing archive with dual-published pieces
-- `8cee333` — Register initial dual-published writing set
+- `2156f75` — Seed writing archive with published pieces
+- `8cee333` — Register initial published writing set
+
+### 2026-09-04 — Writing publication destinations activated
+- Corrected the publication map after confirming that only **Don’t Let Emotion Get Ahead of the Law** and **Recursive Reality Enclosure** are currently available on both X and Substack.
+- Activated direct **Read on X ↗** and **Read on Substack ↗** links for the Law essay and Recursive Reality Enclosure.
+- Removed the X destination from **The “Relationship” Problem** and exposed only its Substack link.
+- Updated `data/content-index.json` so `x_url` remains `null` for the Relationship Problem while all confirmed external URLs are stored for the other pieces.
+- Established the ongoing display rule: publication cards render only the destinations that actually exist for that piece.
+
+Commits:
+- `b197294` — Activate writing publication links by platform
+- `322a69d` — Register writing publication destinations accurately
 
 ## Maintenance convention
 
@@ -428,6 +458,7 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 - Repository: `byalamir/byalamir.github.io`
 - Front end: HTML + CSS with minimal browser JavaScript for mobile navigation and Archive Footfall
 - Active stylesheet: `assets/css/site.css`
+- Responsive ticker stylesheet: `assets/css/ticker.css`
 - Writing archive: `writing/index.html`
 - Mobile web-app manifest: `site.webmanifest`
 - Home-screen artwork source: `assets/images/hero/byalamir-hero-ecosystem.png`
