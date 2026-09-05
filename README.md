@@ -26,6 +26,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Responsive desktop and mobile layouts
 - Compact mobile menu exposing the complete site navigation
 - Dedicated horizontal Writing archive page with platform-specific publication destinations
+- Chronological Writing metadata with publication dates, restrained topic tags, archive count, and current-work emphasis
 - Hero artwork used as the mobile home-screen app identity on iOS and Android
 - Mobile-only home-screen guidance banner with platform-aware install instructions
 - Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
@@ -36,13 +37,17 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 ### Writing
 Selected essays, frameworks, criticism, and research across psychology, sociology, culture, media, politics, and relationships.
 
-The homepage keeps three selected pieces as a visual preview. The full archive lives at `/writing/`, where each piece is presented as a horizontally stacked editorial card with its category/type header, title, synopsis, and only the publication destinations that actually exist for that piece.
+The homepage keeps three selected pieces as a visual preview. The full archive lives at `/writing/`, where each piece is presented as a horizontally stacked editorial card with its category/type header, title, synopsis, publication date, restrained topic tags, and only the publication destinations that actually exist for that piece.
+
+The archive header includes a quiet published-work count and open-ended year marker (`03 PUBLISHED WORKS / 2026—`). The newest published piece receives the green feature treatment and a **LATEST** label, while older pieces retain the standard archive styling. The page closes with **THE ARCHIVE CONTINUES / New work added as it is published.** rather than a newsletter or promotional CTA.
 
 The public Writing archive is publication-led rather than platform-gated. A piece can appear once it has a public destination, and each card renders only the platforms where that piece is available. The current baseline is:
 
-- **Don’t Let Emotion Get Ahead of the Law** — X + Substack
-- **Recursive Reality Enclosure** — X + Substack
-- **The “Relationship” Problem** — Substack only
+- **Don’t Let Emotion Get Ahead of the Law** — Sep 4, 2026 — X + Substack
+- **Recursive Reality Enclosure** — Aug 31, 2026 — X + Substack
+- **The “Relationship” Problem** — Aug 27, 2026 — Substack only
+
+Topic tags are present now as restrained metadata, but interactive category filters are intentionally deferred until the archive is large enough that filtering solves a real navigation problem rather than adding visual clutter.
 
 Other completed or developing pieces can remain in the internal content registry without appearing publicly until their publication destinations are ready.
 
@@ -82,6 +87,7 @@ The repository is organized so source material, public site code, reusable asset
 │   ├── css/
 │   │   ├── site.css
 │   │   ├── ticker.css
+│   │   ├── writing-archive.css
 │   │   └── mobile-install.css
 │   ├── js/
 │   │   └── mobile-install.js
@@ -112,6 +118,7 @@ Reusable front-end files live under `assets/`:
 
 - `assets/css/site.css` — active shared site stylesheet
 - `assets/css/ticker.css` — responsive homepage topic ticker behavior
+- `assets/css/writing-archive.css` — Writing-specific chronology, tag, archive-count, latest-state, and closing-note presentation
 - `assets/css/mobile-install.css` — mobile home-screen banner and instruction-sheet presentation
 - `assets/js/mobile-install.js` — platform detection, dismissal state, and home-screen instruction behavior
 - `assets/icons/` — browser favicon and platform icon files
@@ -145,6 +152,8 @@ Anything that should eventually appear in site search, filters, collection pages
 - tags
 - public URL
 - platform-specific destinations such as `x_url`, `substack_url`, or `apple_music_url`
+
+Published Writing items now include exact ISO publication dates so future chronological sorting, latest-state selection, and filtering can be derived from metadata rather than hard-coded card order.
 
 A platform destination can remain `null` when a piece is not published there. The public archive should not render a link for an unavailable destination.
 
@@ -476,6 +485,20 @@ Commits:
 - `ba8abe8` — Add mobile app guidance banner to homepage
 - `bf54db4` — Add mobile app guidance banner to writing archive
 
+### 2026-09-05 — Writing archive editorial metadata
+- Added exact publication dates to each currently published Writing card and to `data/content-index.json`.
+- Added a quiet **03 PUBLISHED WORKS / 2026—** count beneath the Writing archive introduction.
+- Added restrained topic metadata beneath each synopsis without introducing colorful pills or blog-style category badges.
+- Reframed the green first-card treatment as a meaningful **LATEST** state for the most recently published work.
+- Added **THE ARCHIVE CONTINUES / New work added as it is published.** above the mission statement as a low-pressure archive status line.
+- Added `assets/css/writing-archive.css` so these Writing-specific refinements remain modular instead of expanding the shared site stylesheet unnecessarily.
+- Deferred interactive filters until the archive is large enough for filtering to materially improve navigation.
+
+Commits:
+- `27dd714` — Add editorial metadata styling to writing archive
+- `250cf43` — Add chronology and archive metadata to writing page
+- `a46210e` — Add publication dates to writing metadata
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
@@ -497,6 +520,7 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 - Front end: HTML + CSS with minimal browser JavaScript for mobile navigation, Archive Footfall, and home-screen install guidance
 - Active stylesheet: `assets/css/site.css`
 - Responsive ticker stylesheet: `assets/css/ticker.css`
+- Writing archive stylesheet: `assets/css/writing-archive.css`
 - Mobile install stylesheet: `assets/css/mobile-install.css`
 - Mobile install behavior: `assets/js/mobile-install.js`
 - Writing archive: `writing/index.html`
