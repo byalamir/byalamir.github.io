@@ -25,6 +25,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Bone / cream contrast sections
 - Responsive desktop and mobile layouts
 - Compact mobile menu exposing the complete site navigation
+- Dedicated horizontal Writing archive page with external publication destinations
 - Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
 - Plain HTML and CSS, deployed through GitHub Pages
 
@@ -32,6 +33,8 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 
 ### Writing
 Selected essays, frameworks, criticism, and research across psychology, sociology, culture, media, politics, and relationships.
+
+The homepage keeps three selected pieces as a visual preview. The full archive lives at `/writing/`, where each piece is presented as a horizontally stacked editorial card with its category/type header, title, synopsis, and publication destinations for **Read on X** and **Read on Substack**.
 
 ### LVRS
 R&B music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
@@ -61,6 +64,8 @@ The repository is organized so source material, public site code, reusable asset
 ```text
 /
 ├── index.html
+├── writing/
+│   └── index.html
 ├── README.md
 ├── assets/
 │   ├── css/
@@ -84,13 +89,13 @@ The repository is organized so source material, public site code, reusable asset
 
 ### Root
 
-The root stays intentionally small. `index.html` is the public entry point and this README is the human-readable project archive.
+The root stays intentionally small. `index.html` is the public entry point, `writing/index.html` is the dedicated public writing archive, and this README is the human-readable project archive.
 
 ### Assets
 
 Reusable front-end files live under `assets/`:
 
-- `assets/css/site.css` — active site stylesheet
+- `assets/css/site.css` — active site stylesheet shared by the homepage and writing archive
 - `assets/icons/` — favicon and platform icon files
 - `assets/images/` — artwork and visual assets
 
@@ -120,6 +125,7 @@ Anything that should eventually appear in site search, filters, collection pages
 - summary
 - tags
 - public URL
+- platform-specific destinations such as `x_url`, `substack_url`, or `apple_music_url`
 
 Full source text remains in `content/`; the JSON file stays lightweight and searchable. This gives us a stable architecture for adding site-wide search later without reorganizing the repository again.
 
@@ -341,6 +347,22 @@ Commits:
 - `4635c42` — Add Archive Footfall lifetime visit counter
 - `190026d` — Style Archive Footfall counter
 
+### 2026-09-04 — Dedicated Writing archive
+- Created `/writing/` as a separate, intentionally simple archive page rather than turning every article into a locally hosted site page.
+- Reinterpreted the homepage essay-card visual language as full-width horizontal rows.
+- Each row contains the category/type header, archive number, title, short synopsis, and vertically stacked **Read on X** / **Read on Substack** destinations.
+- Seeded the page with Recursive Reality Enclosure, The Exception Problem, and Morality, Punishment & Control.
+- Kept publication destinations visibly inactive until exact article URLs are supplied rather than inserting guessed or generic links.
+- Updated the homepage Writing navigation, hero action, and selected-writing footer link to point to the new archive.
+- Added `x_url` and `substack_url` fields to the writing entries in `data/content-index.json` for direct platform destinations as the archive grows.
+- Added responsive behavior so the horizontal rows collapse cleanly into vertical cards on small screens.
+
+Commits:
+- `77b988d` — Create dedicated horizontal writing archive page
+- `6cdac6f` — Style horizontal writing archive and publication links
+- `ad17ec9` — Connect homepage writing navigation to archive page
+- `1cea8ab` — Register writing archive and publication link fields
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
@@ -361,6 +383,7 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 - Repository: `byalamir/byalamir.github.io`
 - Front end: HTML + CSS with minimal browser JavaScript for mobile navigation and Archive Footfall
 - Active stylesheet: `assets/css/site.css`
+- Writing archive: `writing/index.html`
 - Content registry: `data/content-index.json`
 - Public visit-counter service: CounterAPI.com
 - No framework or build system required
