@@ -9,16 +9,9 @@
   "theme_color": "#07110d",
   "icons": [
     {
-      "src": "/assets/icons/app-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/assets/images/hero/byalamir-hero-ecosystem.png?v=1",
+      "type": "image/png",
       "purpose": "any"
-    },
-    {
-      "src": "/assets/icons/app-icon-maskable.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
     }
   ]
 }
