@@ -25,6 +25,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Bone / cream contrast sections
 - Responsive desktop and mobile layouts
 - Compact mobile menu exposing the complete site navigation
+- Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
 - Plain HTML and CSS, deployed through GitHub Pages
 
 ## Site structure
@@ -160,6 +161,20 @@ Current icon files:
 - `assets/icons/apple-touch-icon.png`
 
 The HTML includes cache-busted references and multiple browser fallbacks to improve favicon reliability across desktop, mobile, and pinned/home-screen contexts.
+
+## Archive Footfall
+
+**ARCHIVE FOOTFALL** is the small lifetime-visit display positioned after the About section and immediately before the green mission statement.
+
+The counter uses the public CounterAPI.com endpoint with the stable namespace/key combination:
+
+- namespace: `byalamir.github.io`
+- action: `view`
+- key: `archive-footfall`
+
+No account, API key, login, or build-time secret is required. The homepage increments the counter through a lightweight browser request and renders only the returned number inside BY ALAMIR's own visual component. If the external request fails, the component falls back to an em dash rather than disrupting the page.
+
+The displayed lifetime count begins with the installation of this counter on **2026-09-04**; visits before installation were not retrospectively available from GitHub Pages.
 
 ## Project changelog
 
@@ -314,6 +329,18 @@ Commits:
 - `3f9a1f3` — Style LVRS X profile link
 - `a7fe025` — Register LVRS X profile in content index
 
+### 2026-09-04 — Archive Footfall lifetime visit counter
+- Added a small semi-transparent **ARCHIVE FOOTFALL** panel after About and immediately before the green mission statement.
+- Added a persistent site-wide visit count using CounterAPI.com's public counter endpoint, requiring no account or API credentials.
+- Kept the presentation entirely within the BY ALAMIR design system instead of using a third-party badge.
+- Added responsive bottom-right placement on desktop and mobile.
+- Added graceful failure behavior so an unavailable counter never breaks the page.
+- Counter history begins with this installation; GitHub Pages did not provide a retroactive total for visits before tracking was added.
+
+Commits:
+- `4635c42` — Add Archive Footfall lifetime visit counter
+- `190026d` — Style Archive Footfall counter
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
@@ -332,8 +359,9 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 
 - Hosting: GitHub Pages
 - Repository: `byalamir/byalamir.github.io`
-- Front end: HTML + CSS with a minimal inline script for mobile menu closing
+- Front end: HTML + CSS with minimal browser JavaScript for mobile navigation and Archive Footfall
 - Active stylesheet: `assets/css/site.css`
 - Content registry: `data/content-index.json`
+- Public visit-counter service: CounterAPI.com
 - No framework or build system required
 - Main branch deploys directly to the public site
