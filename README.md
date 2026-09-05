@@ -33,7 +33,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 Selected essays, frameworks, criticism, and research across psychology, sociology, culture, media, politics, and relationships.
 
 ### LVRS
-Music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
+R&B music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
 
 The homepage keeps LVRS lightweight rather than creating a separate page for the current playlist-first setup. Daily activity points visitors to X, while the Apple Music playlist is linked directly from the LVRS section.
 
@@ -99,7 +99,7 @@ Source material is organized by discipline:
 
 - `content/writing/` — essays, criticism, commentary, and general long-form writing
 - `content/research/` — psychology, sociology, frameworks, papers, and research-led work
-- `content/lvrs/` — LVRS Radio editorials, playlists, reviews, discovery, and release coverage
+- `content/lvrs/` — LVRS Radio R&B editorials, playlists, reviews, discovery, and release coverage
 - `content/elfa/` — ELFA garment concepts, collections, materials, identity, and product development
 - `content/projects/` — multidisciplinary work and projects that cross collections
 
@@ -136,7 +136,7 @@ The hero is being developed as a visual summary of the broader BY ALAMIR ecosyst
 
 It should represent three core areas simultaneously:
 
-- **LVRS Radio** — audio, music discovery, criticism, editorial culture
+- **LVRS Radio** — R&B, audio, music discovery, criticism, editorial culture
 - **ELFA Fashion** — fashion, textiles, design language, visual identity
 - **Psychology / Research** — papers, frameworks, diagrams, systems thinking
 
@@ -291,6 +291,15 @@ Apple Music:
 Commits:
 - `a1d242c` — Link LVRS Radio Apple Music playlist
 - `8672142` — Register LVRS Apple Music URL in content index
+
+### 2026-09-04 — LVRS R&B focus
+- Clarified the homepage body copy so LVRS is explicitly described as the **R&B music and culture** section of the archive.
+- Updated the content registry summary and tags so future search and filtering identify R&B as LVRS Radio's core genre.
+- Updated repository documentation to keep the R&B focus consistent across the project architecture.
+
+Commits:
+- `901190f` — Define LVRS as an R&B music project
+- `e22a22c` — Add R&B focus to LVRS content metadata
 
 ## Maintenance convention
 
