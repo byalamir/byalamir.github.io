@@ -35,7 +35,7 @@ Selected essays, frameworks, criticism, and research across psychology, sociolog
 ### LVRS
 Music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
 
-The homepage keeps LVRS lightweight rather than creating a separate page for the current playlist-first setup. Daily activity points visitors to X, while the Apple Music playlist will be linked directly from the LVRS section.
+The homepage keeps LVRS lightweight rather than creating a separate page for the current playlist-first setup. Daily activity points visitors to X, while the Apple Music playlist is linked directly from the LVRS section.
 
 ### Projects
 Ongoing work across music, research, fashion, design, and creative development, including LVRS Radio and ELFA Fashion.
@@ -279,6 +279,18 @@ Commit:
 Commits:
 - `ee09399` — Refine LVRS copy and prepare Apple Music link slot
 - `ae1c338` — Prepare understated Apple Music link styling
+
+### 2026-09-04 — LVRS Apple Music destination
+- Connected **“Listen on Apple Music ↗”** directly to the LVRS Radio playlist.
+- Opens the playlist in a new tab while keeping the BY ALAMIR site available.
+- Registered the Apple Music destination in `data/content-index.json` so future site search and collection tooling can access the external project URL.
+
+Apple Music:
+- `https://music.apple.com/us/playlist/lvrs-radio/pl.u-zPyLl9LCeoMlRWa`
+
+Commits:
+- `a1d242c` — Link LVRS Radio Apple Music playlist
+- `8672142` — Register LVRS Apple Music URL in content index
 
 ## Maintenance convention
 
