@@ -35,7 +35,7 @@ Selected essays, frameworks, criticism, and research across psychology, sociolog
 ### LVRS
 R&B music, criticism, discovery, playlists, reviews, and release coverage through the wider LVRS ecosystem.
 
-The homepage keeps LVRS lightweight rather than creating a separate page for the current playlist-first setup. Daily activity points visitors to X, while the Apple Music playlist is linked directly from the LVRS section.
+The homepage keeps LVRS lightweight rather than creating a separate page for the current playlist-first setup. Daily activity links directly to the LVRS X account, while the Apple Music playlist is linked directly from the LVRS section.
 
 ### Projects
 Ongoing work across music, research, fashion, design, and creative development, including LVRS Radio and ELFA Fashion.
@@ -300,6 +300,19 @@ Commits:
 Commits:
 - `901190f` — Define LVRS as an R&B music project
 - `e22a22c` — Add R&B focus to LVRS content metadata
+
+### 2026-09-04 — LVRS X destination
+- Turned **“Daily posts live on X.”** into a direct link to the LVRS X account while preserving the existing sentence-level copy.
+- Styled the sentence as a restrained inline hyperlink so it remains editorial rather than button-like.
+- Registered the X profile in `data/content-index.json` alongside the Apple Music destination.
+
+X:
+- `https://x.com/HopeInSeptember`
+
+Commits:
+- `cbb67e9` — Link LVRS daily posts to X profile
+- `3f9a1f3` — Style LVRS X profile link
+- `a7fe025` — Register LVRS X profile in content index
 
 ## Maintenance convention
 
