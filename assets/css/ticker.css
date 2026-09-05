@@ -1,0 +1,38 @@
+/* Responsive topic ticker */
+@media (max-width:900px){
+  .ticker-track{
+    display:flex;
+    width:max-content;
+    padding:0;
+    text-align:left;
+    animation:byalamir-ticker-scroll 24s linear infinite;
+    will-change:transform;
+  }
+
+  .ticker-set{
+    display:block;
+    flex:none;
+    white-space:nowrap;
+    padding:15px 32px 15px 0;
+  }
+
+  @keyframes byalamir-ticker-scroll{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+}
+
+@media (min-width:901px){
+  .ticker-set:last-child{display:none}
+}
+
+@media (max-width:900px) and (prefers-reduced-motion:reduce){
+  .ticker{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .ticker::-webkit-scrollbar{display:none}
+  .ticker-track{animation:none}
+  .ticker-set:last-child{display:none}
+}
