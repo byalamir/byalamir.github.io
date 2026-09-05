@@ -27,6 +27,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Compact mobile menu exposing the complete site navigation
 - Dedicated horizontal Writing archive page with platform-specific publication destinations
 - Hero artwork used as the mobile home-screen app identity on iOS and Android
+- Mobile-only home-screen guidance banner with platform-aware install instructions
 - Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
 - Plain HTML and CSS, deployed through GitHub Pages
 
@@ -80,7 +81,10 @@ The repository is organized so source material, public site code, reusable asset
 ├── assets/
 │   ├── css/
 │   │   ├── site.css
-│   │   └── ticker.css
+│   │   ├── ticker.css
+│   │   └── mobile-install.css
+│   ├── js/
+│   │   └── mobile-install.js
 │   ├── icons/
 │   └── images/
 │       └── hero/
@@ -108,6 +112,8 @@ Reusable front-end files live under `assets/`:
 
 - `assets/css/site.css` — active shared site stylesheet
 - `assets/css/ticker.css` — responsive homepage topic ticker behavior
+- `assets/css/mobile-install.css` — mobile home-screen banner and instruction-sheet presentation
+- `assets/js/mobile-install.js` — platform detection, dismissal state, and home-screen instruction behavior
 - `assets/icons/` — browser favicon and platform icon files
 - `assets/images/` — artwork and visual assets
 - `assets/images/hero/byalamir-hero-ecosystem.png` — production hero artwork and mobile home-screen app icon source
@@ -194,6 +200,22 @@ When the site is saved to a phone home screen, the visual identity uses the full
 - **Android:** `site.webmanifest` identifies the same hero artwork as the web-app icon and launches the site in standalone display mode when supported.
 - Both the homepage and Writing archive include the same mobile-app metadata so the saved identity remains consistent regardless of which page a visitor is viewing.
 - The saved app title is **BY ALAMIR** and uses the site's dark green theme/background color.
+
+### Mobile home-screen guidance
+
+Mobile browser visitors receive a small, dismissible bottom banner labeled **KEEP BY ALAMIR CLOSE** with a **How to ↗** control.
+
+The guidance system:
+
+- appears only on mobile-width browser sessions;
+- does not appear when BY ALAMIR is already running in standalone installed-app mode;
+- detects iOS / iPadOS or Android from browser signals when possible;
+- shows Safari-specific **Add to Home Screen** steps on Apple mobile devices;
+- shows Chrome **Add to Home screen / Install app** steps on Android;
+- falls back to showing both instruction sets when the operating system cannot be identified confidently;
+- opens instructions in a compact bottom-sheet dialog rather than navigating away from the site;
+- can be dismissed, with dismissal remembered locally for seven days to avoid repeatedly interrupting returning visitors;
+- is available on both the homepage and Writing archive.
 
 ## Archive Footfall
 
@@ -438,6 +460,22 @@ Commits:
 - `b197294` — Activate writing publication links by platform
 - `322a69d` — Register writing publication destinations accurately
 
+### 2026-09-04 — Mobile home-screen guidance banner
+- Added a small mobile-only **KEEP BY ALAMIR CLOSE** banner near the bottom safe area of browser sessions.
+- Added a **How to ↗** control that opens a compact instruction sheet without leaving the site.
+- Added iOS / iPadOS detection with Safari **Share → Add to Home Screen → Add** instructions.
+- Added Android detection with Chrome **menu → Add to Home screen / Install app → confirm** instructions.
+- Added a general fallback that shows both sets of instructions when the operating system cannot be identified confidently.
+- Automatically suppresses the banner when the site is already running in standalone installed-app mode.
+- Added a dismiss control and stores dismissal locally for seven days so the prompt does not repeatedly interrupt returning visitors.
+- Applied the same behavior to the homepage and Writing archive.
+
+Commits:
+- `ca6a5e0` — Add mobile home-screen install banner styles
+- `db5a659` — Add mobile home-screen install guidance
+- `ba8abe8` — Add mobile app guidance banner to homepage
+- `bf54db4` — Add mobile app guidance banner to writing archive
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
@@ -456,9 +494,11 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 
 - Hosting: GitHub Pages
 - Repository: `byalamir/byalamir.github.io`
-- Front end: HTML + CSS with minimal browser JavaScript for mobile navigation and Archive Footfall
+- Front end: HTML + CSS with minimal browser JavaScript for mobile navigation, Archive Footfall, and home-screen install guidance
 - Active stylesheet: `assets/css/site.css`
 - Responsive ticker stylesheet: `assets/css/ticker.css`
+- Mobile install stylesheet: `assets/css/mobile-install.css`
+- Mobile install behavior: `assets/js/mobile-install.js`
 - Writing archive: `writing/index.html`
 - Mobile web-app manifest: `site.webmanifest`
 - Home-screen artwork source: `assets/images/hero/byalamir-hero-ecosystem.png`
