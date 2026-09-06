@@ -4,6 +4,7 @@
 **Type:** Project / Brand foundation  
 **Status:** In development  
 **Name:** Elevated Luxury For All  
+**Pronunciation:** / E-lee-fah /  
 **Public page:** `/projects/elfa/`
 
 ## What ELFA is
