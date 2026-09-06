@@ -27,6 +27,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Compact mobile menu exposing the complete site navigation
 - Dedicated horizontal Writing archive page with platform-specific publication destinations
 - Chronological Writing metadata with publication dates, restrained topic tags, archive count, and current-work emphasis
+- Dedicated Projects registry with status-led horizontal project entries and real external destinations only
 - Hero artwork used as the mobile home-screen app identity on iOS and Android
 - Mobile-only home-screen guidance banner with platform-aware install instructions
 - Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
@@ -57,7 +58,27 @@ R&B music, criticism, discovery, playlists, reviews, and release coverage throug
 The homepage keeps LVRS lightweight rather than creating a separate page for the current playlist-first setup. Daily activity links directly to the LVRS X account, while the Apple Music playlist is linked directly from the LVRS section.
 
 ### Projects
-Ongoing work across music, research, fashion, design, and creative development, including LVRS Radio and ELFA Fashion.
+The homepage keeps a three-item project preview, while the full registry lives at `/projects/`.
+
+The Projects page uses the same archival rhythm as Writing without duplicating the blog/article structure. Each full-width project row includes:
+
+- project number
+- discipline
+- current status
+- project name
+- short description
+- restrained topic metadata
+- only the public destinations that actually exist
+
+The current registry contains:
+
+- **LVRS Radio** — Active — Music / Editorial — X + Apple Music
+- **ELFA** — In Development — Fashion / Design — no public destination yet
+- **BY ALAMIR Archive** — Active — Publishing / Web — public source on GitHub
+
+The page includes `03 ACTIVE / DEVELOPING PROJECTS` beneath the introduction and closes with **THE REGISTRY CONTINUES / New projects are added as they become public.**
+
+Projects are status-led rather than date-led. A developing project can be visible without a destination, but the site should never invent or substitute a link merely to fill the right-hand destination column.
 
 ### About
 A concise explanation of BY ALAMIR as a personal archive spanning multiple disciplines.
@@ -81,6 +102,8 @@ The repository is organized so source material, public site code, reusable asset
 ├── index.html
 ├── writing/
 │   └── index.html
+├── projects/
+│   └── index.html
 ├── site.webmanifest
 ├── README.md
 ├── assets/
@@ -88,6 +111,7 @@ The repository is organized so source material, public site code, reusable asset
 │   │   ├── site.css
 │   │   ├── ticker.css
 │   │   ├── writing-archive.css
+│   │   ├── projects-archive.css
 │   │   └── mobile-install.css
 │   ├── js/
 │   │   └── mobile-install.js
@@ -110,7 +134,7 @@ The repository is organized so source material, public site code, reusable asset
 
 ### Root
 
-The root stays intentionally small. `index.html` is the public entry point, `writing/index.html` is the dedicated public writing archive, `site.webmanifest` defines the mobile web-app identity, and this README is the human-readable project archive.
+The root stays intentionally small. `index.html` is the public entry point, `writing/index.html` is the dedicated public Writing archive, `projects/index.html` is the dedicated project registry, `site.webmanifest` defines the mobile web-app identity, and this README is the human-readable project archive.
 
 ### Assets
 
@@ -119,6 +143,7 @@ Reusable front-end files live under `assets/`:
 - `assets/css/site.css` — active shared site stylesheet
 - `assets/css/ticker.css` — responsive homepage topic ticker behavior
 - `assets/css/writing-archive.css` — Writing-specific chronology, tag, archive-count, latest-state, and closing-note presentation
+- `assets/css/projects-archive.css` — Projects-specific registry, status, project metadata, destination, and closing-note presentation
 - `assets/css/mobile-install.css` — mobile home-screen banner and instruction-sheet presentation
 - `assets/js/mobile-install.js` — platform detection, dismissal state, and home-screen instruction behavior
 - `assets/icons/` — browser favicon and platform icon files
@@ -151,9 +176,11 @@ Anything that should eventually appear in site search, filters, collection pages
 - summary
 - tags
 - public URL
-- platform-specific destinations such as `x_url`, `substack_url`, or `apple_music_url`
+- platform-specific destinations such as `x_url`, `substack_url`, `apple_music_url`, or `github_url`
 
-Published Writing items now include exact ISO publication dates so future chronological sorting, latest-state selection, and filtering can be derived from metadata rather than hard-coded card order.
+Published Writing items include exact ISO publication dates so future chronological sorting, latest-state selection, and filtering can be derived from metadata rather than hard-coded card order.
+
+Project entries point to stable anchors inside `/projects/` and store external destinations only when those destinations actually exist. **BY ALAMIR Archive** is also registered as a first-class project so the site itself can be discovered as part of the broader body of work.
 
 A platform destination can remain `null` when a piece is not published there. The public archive should not render a link for an unavailable destination.
 
@@ -207,7 +234,7 @@ When the site is saved to a phone home screen, the visual identity uses the full
 
 - **iOS / iPadOS:** `apple-touch-icon` points directly to `/assets/images/hero/byalamir-hero-ecosystem.png`.
 - **Android:** `site.webmanifest` identifies the same hero artwork as the web-app icon and launches the site in standalone display mode when supported.
-- Both the homepage and Writing archive include the same mobile-app metadata so the saved identity remains consistent regardless of which page a visitor is viewing.
+- The homepage, Writing archive, and Projects registry include the same mobile-app metadata so the saved identity remains consistent regardless of which public page a visitor is viewing.
 - The saved app title is **BY ALAMIR** and uses the site's dark green theme/background color.
 
 ### Mobile home-screen guidance
@@ -224,7 +251,7 @@ The guidance system:
 - falls back to showing both instruction sets when the operating system cannot be identified confidently;
 - opens instructions in a compact bottom-sheet dialog rather than navigating away from the site;
 - can be dismissed, with dismissal remembered locally for seven days to avoid repeatedly interrupting returning visitors;
-- is available on both the homepage and Writing archive.
+- is available on the homepage, Writing archive, and Projects registry.
 
 ## Archive Footfall
 
@@ -427,7 +454,7 @@ Commits:
 - Added `site.webmanifest` so Android and other supporting browsers recognize BY ALAMIR as a standalone web-app identity.
 - Set the Android manifest icon to the same production hero artwork used on the homepage.
 - Added the app title **BY ALAMIR**, standalone display preference, and the site's dark green theme/background colors.
-- Applied the same mobile-app metadata to both the homepage and `/writing/` so saving either page produces the same site identity.
+- Applied the same mobile-app metadata to the homepage and dedicated archive pages so saving the site from any primary public page produces the same identity.
 - Removed intermediate SVG icon wrappers after switching the final implementation to reference the hero image directly.
 
 Commits:
@@ -477,7 +504,7 @@ Commits:
 - Added a general fallback that shows both sets of instructions when the operating system cannot be identified confidently.
 - Automatically suppresses the banner when the site is already running in standalone installed-app mode.
 - Added a dismiss control and stores dismissal locally for seven days so the prompt does not repeatedly interrupt returning visitors.
-- Applied the same behavior to the homepage and Writing archive.
+- Applied the same behavior across the homepage and dedicated archive pages.
 
 Commits:
 - `ca6a5e0` — Add mobile home-screen install banner styles
@@ -498,6 +525,27 @@ Commits:
 - `27dd714` — Add editorial metadata styling to writing archive
 - `250cf43` — Add chronology and archive metadata to writing page
 - `a46210e` — Add publication dates to writing metadata
+
+### 2026-09-05 — Dedicated Projects registry
+- Created `/projects/` as the dedicated registry for active and developing creative projects.
+- Built the page around full-width horizontal project rows related to the Writing archive visual language but organized around **status** instead of publication chronology.
+- Established the initial registry as **LVRS Radio**, **ELFA**, and **BY ALAMIR Archive**.
+- Added direct X and Apple Music destinations to LVRS Radio.
+- Kept ELFA visible as **IN DEVELOPMENT** without inventing a public destination.
+- Registered BY ALAMIR itself as an active Publishing / Web project with the public GitHub repository as its source destination.
+- Added restrained project tags, active/developing status indicators, and the header count **03 ACTIVE / DEVELOPING PROJECTS**.
+- Added **THE REGISTRY CONTINUES / New projects are added as they become public.** above the mission statement.
+- Updated the homepage project preview to match the new registry and added **Browse the project registry ↗**.
+- Updated homepage and Writing navigation so **Projects** now routes to `/projects/` instead of only scrolling to the homepage preview.
+- Updated `data/content-index.json` with stable project anchors and the BY ALAMIR Archive project entry.
+- Added `assets/css/projects-archive.css` to keep the registry-specific design modular.
+
+Commits:
+- `83f1171` — Add projects registry archive styles
+- `f17aa2c` — Create dedicated projects registry page
+- `90ff915` — Connect homepage to projects registry
+- `0cf2d3d` — Register projects archive destinations
+- `6642cd5` — Link writing navigation to projects registry
 
 ## Maintenance convention
 
@@ -521,9 +569,11 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 - Active stylesheet: `assets/css/site.css`
 - Responsive ticker stylesheet: `assets/css/ticker.css`
 - Writing archive stylesheet: `assets/css/writing-archive.css`
+- Projects registry stylesheet: `assets/css/projects-archive.css`
 - Mobile install stylesheet: `assets/css/mobile-install.css`
 - Mobile install behavior: `assets/js/mobile-install.js`
 - Writing archive: `writing/index.html`
+- Projects registry: `projects/index.html`
 - Mobile web-app manifest: `site.webmanifest`
 - Home-screen artwork source: `assets/images/hero/byalamir-hero-ecosystem.png`
 - Content registry: `data/content-index.json`
