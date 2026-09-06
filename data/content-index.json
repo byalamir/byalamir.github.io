@@ -86,13 +86,14 @@
     {
       "id": "elfa-fashion",
       "title": "ELFA",
+      "subtitle": "Elevated Luxury For All",
       "collection": "elfa",
       "type": "project",
       "status": "in-development",
       "year": 2026,
-      "summary": "Fashion concepts, garment development, visual identity, and product design.",
-      "tags": ["fashion", "design", "garments", "identity", "ELFA"],
-      "url": "/projects/#elfa"
+      "summary": "A developing fashion project centered on garments, materials, proportion, construction, and visual identity.",
+      "tags": ["fashion", "design", "garments", "materials", "construction", "identity", "ELFA"],
+      "url": "/projects/elfa/"
     },
     {
       "id": "byalamir-archive",
