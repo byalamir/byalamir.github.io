@@ -28,6 +28,7 @@ The site is intentionally built as an archive rather than a marketing funnel. Th
 - Dedicated horizontal Writing archive page with platform-specific publication destinations
 - Chronological Writing metadata with publication dates, restrained topic tags, archive count, and current-work emphasis
 - Dedicated Projects registry with status-led horizontal project entries and real external destinations only
+- Dedicated ELFA brand-foundation page inside the portfolio
 - Hero artwork used as the mobile home-screen app identity on iOS and Android
 - Mobile-only home-screen guidance banner with platform-aware install instructions
 - Semi-transparent **ARCHIVE FOOTFALL** lifetime visit counter before the mission statement
@@ -73,12 +74,29 @@ The Projects page uses the same archival rhythm as Writing without duplicating t
 The current registry contains:
 
 - **LVRS Radio** — Active — Music / Editorial — X + Apple Music
-- **ELFA** — In Development — Fashion / Design — no public destination yet
+- **ELFA** — In Development — Fashion / Design — dedicated portfolio page at `/projects/elfa/`
 - **BY ALAMIR Archive** — Active — Publishing / Web — public source on GitHub
 
 The page includes `03 ACTIVE / DEVELOPING PROJECTS` beneath the introduction and closes with **THE REGISTRY CONTINUES / New projects are added as they become public.**
 
-Projects are status-led rather than date-led. A developing project can be visible without a destination, but the site should never invent or substitute a link merely to fill the right-hand destination column.
+Projects are status-led rather than date-led. A developing project can be visible before it has a separate commercial or social destination; internal portfolio pages are used when they help document the work accurately.
+
+### ELFA
+ELFA is the fashion and garment-design project within the BY ALAMIR portfolio. Its dedicated foundation page lives at `/projects/elfa/` and remains part of the portfolio while the project is still in development.
+
+**ELFA = Elevated Luxury For All.**
+
+The page is intentionally not a storefront or collection page yet. It establishes three things first:
+
+1. **What ELFA is** — a developing fashion project concerned with garments, materials, proportion, construction, and visual identity.
+2. **How it began** — recurring garment and identity experiments gradually began sharing the same design logic and became a coherent project rather than isolated clothing concepts.
+3. **The mission behind the name** — luxury is treated as care, material, proportion, construction, and experience rather than exclusivity alone.
+
+The phrase **“For All”** is a design position rather than a guarantee that every future object must occupy the same price point. ELFA rejects the idea that exclusion itself is what gives an object value. The working mission is to create clothing that feels elevated because it has been considered closely — clothing meant to be worn, lived in, and understood through its details.
+
+The origin copy deliberately avoids inventing a specific founding date or dramatic origin story that has not been established. It documents the project as emerging from the garment, material, silhouette, closure, collar, surface-language, and identity experiments already being developed.
+
+The stable source note for this foundation lives at `content/elfa/brand-foundation.md`, allowing future collections, garment concepts, materials, and identity work to build on the same baseline without rewriting the project’s purpose.
 
 ### About
 A concise explanation of BY ALAMIR as a personal archive spanning multiple disciplines.
@@ -103,7 +121,9 @@ The repository is organized so source material, public site code, reusable asset
 ├── writing/
 │   └── index.html
 ├── projects/
-│   └── index.html
+│   ├── index.html
+│   └── elfa/
+│       └── index.html
 ├── site.webmanifest
 ├── README.md
 ├── assets/
@@ -112,6 +132,7 @@ The repository is organized so source material, public site code, reusable asset
 │   │   ├── ticker.css
 │   │   ├── writing-archive.css
 │   │   ├── projects-archive.css
+│   │   ├── elfa-page.css
 │   │   └── mobile-install.css
 │   ├── js/
 │   │   └── mobile-install.js
@@ -123,6 +144,7 @@ The repository is organized so source material, public site code, reusable asset
 │   ├── research/
 │   ├── lvrs/
 │   ├── elfa/
+│   │   └── brand-foundation.md
 │   └── projects/
 ├── data/
 │   └── content-index.json
@@ -134,7 +156,7 @@ The repository is organized so source material, public site code, reusable asset
 
 ### Root
 
-The root stays intentionally small. `index.html` is the public entry point, `writing/index.html` is the dedicated public Writing archive, `projects/index.html` is the dedicated project registry, `site.webmanifest` defines the mobile web-app identity, and this README is the human-readable project archive.
+The root stays intentionally small. `index.html` is the public entry point, `writing/index.html` is the dedicated public Writing archive, `projects/index.html` is the dedicated project registry, `projects/elfa/index.html` is ELFA’s portfolio foundation page, `site.webmanifest` defines the mobile web-app identity, and this README is the human-readable project archive.
 
 ### Assets
 
@@ -144,6 +166,7 @@ Reusable front-end files live under `assets/`:
 - `assets/css/ticker.css` — responsive homepage topic ticker behavior
 - `assets/css/writing-archive.css` — Writing-specific chronology, tag, archive-count, latest-state, and closing-note presentation
 - `assets/css/projects-archive.css` — Projects-specific registry, status, project metadata, destination, and closing-note presentation
+- `assets/css/elfa-page.css` — ELFA-specific brand-foundation and mission presentation
 - `assets/css/mobile-install.css` — mobile home-screen banner and instruction-sheet presentation
 - `assets/js/mobile-install.js` — platform detection, dismissal state, and home-screen instruction behavior
 - `assets/icons/` — browser favicon and platform icon files
@@ -157,7 +180,7 @@ Source material is organized by discipline:
 - `content/writing/` — essays, criticism, commentary, and general long-form writing
 - `content/research/` — psychology, sociology, frameworks, papers, and research-led work
 - `content/lvrs/` — LVRS Radio R&B editorials, playlists, reviews, discovery, and release coverage
-- `content/elfa/` — ELFA garment concepts, collections, materials, identity, and product development
+- `content/elfa/` — ELFA garment concepts, collections, materials, identity, product development, and brand-foundation notes
 - `content/projects/` — multidisciplinary work and projects that cross collections
 
 Use one stable lowercase kebab-case slug per substantial item. `content/_template.md` provides the standard metadata fields and note structure for future entries.
@@ -169,6 +192,7 @@ Use one stable lowercase kebab-case slug per substantial item. `content/_templat
 Anything that should eventually appear in site search, filters, collection pages, archives, or feeds should be registered there with metadata such as:
 
 - title
+- subtitle
 - collection
 - content type
 - status
@@ -180,7 +204,7 @@ Anything that should eventually appear in site search, filters, collection pages
 
 Published Writing items include exact ISO publication dates so future chronological sorting, latest-state selection, and filtering can be derived from metadata rather than hard-coded card order.
 
-Project entries point to stable anchors inside `/projects/` and store external destinations only when those destinations actually exist. **BY ALAMIR Archive** is also registered as a first-class project so the site itself can be discovered as part of the broader body of work.
+Project entries point to stable pages or anchors and store external destinations only when those destinations actually exist. ELFA now resolves to its dedicated `/projects/elfa/` foundation page and is registered with the subtitle **Elevated Luxury For All**. **BY ALAMIR Archive** is also registered as a first-class project so the site itself can be discovered as part of the broader body of work.
 
 A platform destination can remain `null` when a piece is not published there. The public archive should not render a link for an unavailable destination.
 
@@ -234,7 +258,7 @@ When the site is saved to a phone home screen, the visual identity uses the full
 
 - **iOS / iPadOS:** `apple-touch-icon` points directly to `/assets/images/hero/byalamir-hero-ecosystem.png`.
 - **Android:** `site.webmanifest` identifies the same hero artwork as the web-app icon and launches the site in standalone display mode when supported.
-- The homepage, Writing archive, and Projects registry include the same mobile-app metadata so the saved identity remains consistent regardless of which public page a visitor is viewing.
+- The homepage, Writing archive, Projects registry, and ELFA foundation page include the same mobile-app metadata so the saved identity remains consistent regardless of which public page a visitor is viewing.
 - The saved app title is **BY ALAMIR** and uses the site's dark green theme/background color.
 
 ### Mobile home-screen guidance
@@ -251,7 +275,7 @@ The guidance system:
 - falls back to showing both instruction sets when the operating system cannot be identified confidently;
 - opens instructions in a compact bottom-sheet dialog rather than navigating away from the site;
 - can be dismissed, with dismissal remembered locally for seven days to avoid repeatedly interrupting returning visitors;
-- is available on the homepage, Writing archive, and Projects registry.
+- is available across the homepage and dedicated archive/project pages.
 
 ## Archive Footfall
 
@@ -531,7 +555,7 @@ Commits:
 - Built the page around full-width horizontal project rows related to the Writing archive visual language but organized around **status** instead of publication chronology.
 - Established the initial registry as **LVRS Radio**, **ELFA**, and **BY ALAMIR Archive**.
 - Added direct X and Apple Music destinations to LVRS Radio.
-- Kept ELFA visible as **IN DEVELOPMENT** without inventing a public destination.
+- Kept ELFA visible as **IN DEVELOPMENT** without inventing an external commercial or social destination.
 - Registered BY ALAMIR itself as an active Publishing / Web project with the public GitHub repository as its source destination.
 - Added restrained project tags, active/developing status indicators, and the header count **03 ACTIVE / DEVELOPING PROJECTS**.
 - Added **THE REGISTRY CONTINUES / New projects are added as they become public.** above the mission statement.
@@ -546,6 +570,25 @@ Commits:
 - `90ff915` — Connect homepage to projects registry
 - `0cf2d3d` — Register projects archive destinations
 - `6642cd5` — Link writing navigation to projects registry
+
+### 2026-09-05 — ELFA brand foundation
+- Created `/projects/elfa/` as a dedicated portfolio page for ELFA while the fashion project remains in development.
+- Expanded the name as **Elevated Luxury For All** and made it the central statement of the page.
+- Added restrained sections covering **what ELFA is**, **how it developed**, and **the design position behind the name**.
+- Framed ELFA’s origin as the convergence of recurring garment, material, silhouette, construction, closure, collar, surface-language, and identity experiments rather than inventing a specific founding event.
+- Defined “For All” as a rejection of exclusion as the source of luxury value, while avoiding an unsupported promise that every future object must share one price point.
+- Added the working mission: create clothing that feels elevated because it has been considered closely — clothing meant to be worn, lived in, and understood through its details.
+- Added `content/elfa/brand-foundation.md` as the stable source note for the project’s foundation.
+- Added `assets/css/elfa-page.css` for the dedicated ELFA presentation.
+- Replaced the Projects registry’s **No public destination yet** state with an internal **View ELFA ↗** link.
+- Updated `data/content-index.json` so ELFA resolves directly to `/projects/elfa/` and carries the subtitle **Elevated Luxury For All**.
+
+Commits:
+- `5a094af` — Add ELFA brand foundation page styles
+- `d6681cd` — Add ELFA brand foundation source note
+- `96479ed` — Create dedicated ELFA brand foundation page
+- `772f968` — Link ELFA registry entry to brand foundation page
+- `fea2e23` — Register dedicated ELFA brand page
 
 ## Maintenance convention
 
@@ -570,10 +613,13 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 - Responsive ticker stylesheet: `assets/css/ticker.css`
 - Writing archive stylesheet: `assets/css/writing-archive.css`
 - Projects registry stylesheet: `assets/css/projects-archive.css`
+- ELFA page stylesheet: `assets/css/elfa-page.css`
 - Mobile install stylesheet: `assets/css/mobile-install.css`
 - Mobile install behavior: `assets/js/mobile-install.js`
 - Writing archive: `writing/index.html`
 - Projects registry: `projects/index.html`
+- ELFA foundation page: `projects/elfa/index.html`
+- ELFA source foundation: `content/elfa/brand-foundation.md`
 - Mobile web-app manifest: `site.webmanifest`
 - Home-screen artwork source: `assets/images/hero/byalamir-hero-ecosystem.png`
 - Content registry: `data/content-index.json`
