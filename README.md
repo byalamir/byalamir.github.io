@@ -84,7 +84,10 @@ Projects are status-led rather than date-led. A developing project can be visibl
 ### ELFA
 ELFA is the fashion and garment-design project within the BY ALAMIR portfolio. Its dedicated foundation page lives at `/projects/elfa/` and remains part of the portfolio while the project is still in development.
 
-**ELFA = Elevated Luxury For All.**
+**ELFA = Elevated Luxury For All.**  
+**Pronunciation: / E-lee-fah /**
+
+The pronunciation is displayed directly beneath the expanded name in the ELFA hero as a small editorial annotation, preserving the intended Arabic-influenced reading without making it part of the wordmark itself.
 
 The page is intentionally not a storefront or collection page yet. It establishes three things first:
 
@@ -166,7 +169,7 @@ Reusable front-end files live under `assets/`:
 - `assets/css/ticker.css` — responsive homepage topic ticker behavior
 - `assets/css/writing-archive.css` — Writing-specific chronology, tag, archive-count, latest-state, and closing-note presentation
 - `assets/css/projects-archive.css` — Projects-specific registry, status, project metadata, destination, and closing-note presentation
-- `assets/css/elfa-page.css` — ELFA-specific brand-foundation and mission presentation
+- `assets/css/elfa-page.css` — ELFA-specific brand-foundation, pronunciation, and mission presentation
 - `assets/css/mobile-install.css` — mobile home-screen banner and instruction-sheet presentation
 - `assets/js/mobile-install.js` — platform detection, dismissal state, and home-screen instruction behavior
 - `assets/icons/` — browser favicon and platform icon files
@@ -193,6 +196,7 @@ Anything that should eventually appear in site search, filters, collection pages
 
 - title
 - subtitle
+- pronunciation when relevant to a named project
 - collection
 - content type
 - status
@@ -204,7 +208,7 @@ Anything that should eventually appear in site search, filters, collection pages
 
 Published Writing items include exact ISO publication dates so future chronological sorting, latest-state selection, and filtering can be derived from metadata rather than hard-coded card order.
 
-Project entries point to stable pages or anchors and store external destinations only when those destinations actually exist. ELFA now resolves to its dedicated `/projects/elfa/` foundation page and is registered with the subtitle **Elevated Luxury For All**. **BY ALAMIR Archive** is also registered as a first-class project so the site itself can be discovered as part of the broader body of work.
+Project entries point to stable pages or anchors and store external destinations only when those destinations actually exist. ELFA now resolves to its dedicated `/projects/elfa/` foundation page and is registered with the subtitle **Elevated Luxury For All** and pronunciation **/ E-lee-fah /**. **BY ALAMIR Archive** is also registered as a first-class project so the site itself can be discovered as part of the broader body of work.
 
 A platform destination can remain `null` when a piece is not published there. The public archive should not render a link for an unavailable destination.
 
@@ -590,6 +594,18 @@ Commits:
 - `772f968` — Link ELFA registry entry to brand foundation page
 - `fea2e23` — Register dedicated ELFA brand page
 
+### 2026-09-05 — ELFA pronunciation
+- Established the public pronunciation of **ELFA** as **/ E-lee-fah /**.
+- Added `pronounced / E-lee-fah /` directly beneath **ELEVATED LUXURY FOR ALL** in the ELFA hero, using a smaller italic editorial treatment so it remains secondary to the wordmark and expanded name.
+- Added the pronunciation to `content/elfa/brand-foundation.md` and `data/content-index.json` so it remains part of the project’s permanent identity metadata.
+- Cache-bumped the ELFA-specific stylesheet so the pronunciation treatment updates reliably on mobile and desktop.
+
+Commits:
+- `46dbbea` — Style ELFA pronunciation annotation
+- `1328774` — Add ELFA pronunciation to brand header
+- `b258fc9` — Record ELFA pronunciation in brand foundation
+- `2c34797` — Add ELFA pronunciation metadata
+
 ## Maintenance convention
 
 This README is also the development archive for the project.
@@ -620,6 +636,7 @@ This keeps the Git history, source archive, site discovery layer, and human-read
 - Projects registry: `projects/index.html`
 - ELFA foundation page: `projects/elfa/index.html`
 - ELFA source foundation: `content/elfa/brand-foundation.md`
+- ELFA pronunciation: `/ E-lee-fah /`
 - Mobile web-app manifest: `site.webmanifest`
 - Home-screen artwork source: `assets/images/hero/byalamir-hero-ecosystem.png`
 - Content registry: `data/content-index.json`
