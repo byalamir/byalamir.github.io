@@ -1,7 +1,9 @@
 .elfa-page-hero{padding:104px 0 92px;border-bottom:1px solid var(--line)}
 .elfa-page-hero .kicker{margin-bottom:34px}
 .elfa-wordmark{margin:0;font-size:clamp(112px,20vw,320px);line-height:.72;letter-spacing:-.105em;font-weight:900}
-.elfa-expansion{display:flex;justify-content:space-between;gap:30px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#839188}
+.elfa-expansion{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#839188}
+.elfa-name-details{display:flex;flex-direction:column;gap:10px}
+.elfa-pronunciation{font-size:9px;letter-spacing:.08em;text-transform:none;font-style:italic;color:#68786e}
 .elfa-intro{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;padding:82px 0 92px;border-bottom:1px solid var(--line)}
 .elfa-intro-label,.elfa-section-label{margin:0;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#718078}
 .elfa-intro-copy{max-width:850px;margin:0;font-size:clamp(30px,4vw,58px);line-height:1.02;letter-spacing:-.045em;color:#d9ddd9}
@@ -21,7 +23,9 @@
 @media(max-width:900px){
   .elfa-page-hero{padding:68px 0 58px}
   .elfa-wordmark{font-size:30vw}
-  .elfa-expansion{flex-direction:column;gap:8px;margin-top:30px}
+  .elfa-expansion{flex-direction:column;gap:18px;margin-top:30px}
+  .elfa-name-details{gap:8px}
+  .elfa-pronunciation{font-size:9px}
   .elfa-intro{grid-template-columns:1fr;gap:28px;padding:52px 0 62px}
   .elfa-intro-copy{font-size:clamp(32px,9.5vw,50px)}
   .elfa-sections{padding-bottom:72px}
