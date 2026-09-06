@@ -79,20 +79,32 @@
       "year": 2026,
       "summary": "R&B discovery, playlists, reviews, release coverage, and editorial work.",
       "tags": ["R&B", "music", "editorial", "discovery", "playlists", "reviews"],
-      "url": "/#lvrs",
+      "url": "/projects/#lvrs-radio",
       "x_url": "https://x.com/HopeInSeptember",
       "apple_music_url": "https://music.apple.com/us/playlist/lvrs-radio/pl.u-zPyLl9LCeoMlRWa"
     },
     {
       "id": "elfa-fashion",
-      "title": "ELFA Fashion",
+      "title": "ELFA",
       "collection": "elfa",
       "type": "project",
       "status": "in-development",
       "year": 2026,
       "summary": "Fashion concepts, garment development, visual identity, and product design.",
       "tags": ["fashion", "design", "garments", "identity", "ELFA"],
-      "url": "/#projects"
+      "url": "/projects/#elfa"
+    },
+    {
+      "id": "byalamir-archive",
+      "title": "BY ALAMIR Archive",
+      "collection": "projects",
+      "type": "project",
+      "status": "active",
+      "year": 2026,
+      "summary": "An independent web archive organizing writing, research, music, design, and cultural work outside any single publishing platform.",
+      "tags": ["archive", "publishing", "web", "research", "design"],
+      "url": "/projects/#byalamir-archive",
+      "github_url": "https://github.com/byalamir/byalamir.github.io"
     }
   ]
 }
