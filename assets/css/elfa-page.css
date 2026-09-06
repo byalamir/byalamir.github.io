@@ -1,0 +1,34 @@
+.elfa-page-hero{padding:104px 0 92px;border-bottom:1px solid var(--line)}
+.elfa-page-hero .kicker{margin-bottom:34px}
+.elfa-wordmark{margin:0;font-size:clamp(112px,20vw,320px);line-height:.72;letter-spacing:-.105em;font-weight:900}
+.elfa-expansion{display:flex;justify-content:space-between;gap:30px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#839188}
+.elfa-intro{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;padding:82px 0 92px;border-bottom:1px solid var(--line)}
+.elfa-intro-label,.elfa-section-label{margin:0;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#718078}
+.elfa-intro-copy{max-width:850px;margin:0;font-size:clamp(30px,4vw,58px);line-height:1.02;letter-spacing:-.045em;color:#d9ddd9}
+.elfa-sections{padding-bottom:110px}
+.elfa-section{display:grid;grid-template-columns:74px .65fr 1.35fr;gap:34px;padding:64px 0;border-bottom:1px solid var(--line)}
+.elfa-section-num{padding-top:4px;font-size:9px;letter-spacing:.14em;color:#718078}
+.elfa-section h2{margin:0;font-size:clamp(36px,4.4vw,64px);line-height:.94;letter-spacing:-.05em}
+.elfa-section-copy{max-width:760px}
+.elfa-section-copy p{margin:0 0 22px;color:#9eaaa2;font-size:16px;line-height:1.6}
+.elfa-section-copy p:last-child{margin-bottom:0}
+.elfa-mission{margin:78px 0 0;padding:48px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(18,60,38,.22),rgba(7,17,13,0) 72%)}
+.elfa-mission-label{display:block;margin-bottom:32px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#829188}
+.elfa-mission blockquote{max-width:1000px;margin:0;font-size:clamp(42px,6vw,86px);line-height:.92;letter-spacing:-.055em;font-weight:600}
+.elfa-mission-note{max-width:700px;margin:34px 0 0;color:#9eaaa2;font-size:15px;line-height:1.6}
+.elfa-status{display:flex;justify-content:space-between;gap:30px;padding:34px 0 78px;border-top:1px solid var(--line)}
+.elfa-status strong,.elfa-status span{font-size:9px;letter-spacing:.14em;text-transform:uppercase}.elfa-status strong{font-weight:500;color:#819087}.elfa-status span{color:#5f6e65;text-align:right}
+@media(max-width:900px){
+  .elfa-page-hero{padding:68px 0 58px}
+  .elfa-wordmark{font-size:30vw}
+  .elfa-expansion{flex-direction:column;gap:8px;margin-top:30px}
+  .elfa-intro{grid-template-columns:1fr;gap:28px;padding:52px 0 62px}
+  .elfa-intro-copy{font-size:clamp(32px,9.5vw,50px)}
+  .elfa-sections{padding-bottom:72px}
+  .elfa-section{grid-template-columns:1fr;gap:18px;padding:46px 0}
+  .elfa-section h2{font-size:clamp(38px,12vw,58px);margin:4px 0 10px}
+  .elfa-section-copy p{font-size:15px}
+  .elfa-mission{margin-top:54px;padding:30px 22px}
+  .elfa-mission blockquote{font-size:clamp(40px,12vw,62px)}
+  .elfa-status{flex-direction:column;gap:10px;padding:28px 0 58px}.elfa-status span{text-align:left}
+}
